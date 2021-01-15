@@ -9,31 +9,10 @@ class OnlineXGB(XGBModel):
         trainDmatrix = DMatrix(X, label=y, nthread=self.n_jobs, missing=self.missing)
         extra_params = params
         params = {'objective': 'reg:squarederror',
-                     'base_score': None,
-                     'booster': None,
-                     'colsample_bylevel': None,
-                     'colsample_bynode': None,
-                     'colsample_bytree': None,
-                     'gamma': None,
-                     'gpu_id': None,
-                     'importance_type': 'gain',
-                     'interaction_constraints': None,
                      'learning_rate': None,
-                     'max_delta_step': None,
                      'max_depth': None,
                      'min_child_weight': None,
-                     'missing': nan,
-                     'monotone_constraints': None,
-                     'n_jobs': None,
-                     'num_parallel_tree': None,
-                     'random_state': None,
-                     'reg_alpha': None,
-                     'reg_lambda': None,
-                     'scale_pos_weight': None,
-                     'subsample': None,
-                     'tree_method': None,
-                     'validate_parameters': None,
-                     'verbosity': None}
+                     'n_jobs': None}
         print(params,extra_params)
         if extra_params is not None:
             for k, v in extra_params.items():
