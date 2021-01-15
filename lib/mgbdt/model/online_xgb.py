@@ -12,7 +12,9 @@ class OnlineXGB(XGBModel):
         if extra_params is not None:
             for k, v in extra_params.items():
                 params[k] = v
-        params.pop("n_estimators")
+        params["n_estimators"] = 100
+        del(params["n_estimators"])
+#         params.pop("n_estimators")
 
         if callable(self.objective):
             obj = _objective_decorator(self.objective)
