@@ -24,7 +24,6 @@ class OnlineXGB(XGBModel):
  'min_child_weight': None,
  'missing': nan,
  'monotone_constraints': None,
- 'n_estimators': 100,
  'n_jobs': None,
  'num_parallel_tree': None,
  'random_state': None,
@@ -38,8 +37,8 @@ class OnlineXGB(XGBModel):
         if extra_params is not None:
             for k, v in extra_params.items():
                 params[k] = v
-        params["n_estimators"] = 100
-        del(params["n_estimators"])
+#         params["n_estimators"] = 100
+#         del(params["n_estimators"])
 #         params.pop("n_estimators")
 
         if callable(self.objective):
